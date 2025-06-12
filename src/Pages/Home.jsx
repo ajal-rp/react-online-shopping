@@ -27,7 +27,7 @@ const Home = () => {
     fetch("/data.json")
       .then((response) => response.json())
       .then((data) => {
-        console.log("Data :=> ", data);
+        console.log("Products :=> ", data);
         setProducts(data);
       });
   }, []);
