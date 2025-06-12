@@ -1,4 +1,4 @@
-import { Container, Stack } from "@chakra-ui/react";
+
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -10,9 +10,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/react-online-shopping" element={<Home />} />
+        <Route path="/react-online-shopping//profile" element={<Profile />} />
+        <Route
+          path="/react-online-shopping/product/:id"
+          element={<ProductDetails />}
+        />
       </Routes>
     </BrowserRouter>
   );

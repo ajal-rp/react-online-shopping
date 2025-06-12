@@ -6,16 +6,14 @@ import {
   Flex,
   Grid,
   Heading,
-  IconButton,
   Image,
-  Input,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { FaDollarSign, FaEye, FaHamburger } from "react-icons/fa";
+import { FaDollarSign } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { LuSearch, LuStar } from "react-icons/lu";
+import {  LuStar } from "react-icons/lu";
 import Footer from "../components/ui/Footer";
 import { Link } from "react-router-dom";
 import NavBar from "../components/ui/NavBar";
@@ -24,7 +22,7 @@ const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("./data.json")
       .then((response) => response.json())
       .then((data) => {
         console.log("Products :=> ", data);

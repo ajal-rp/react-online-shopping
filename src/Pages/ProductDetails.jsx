@@ -1,4 +1,15 @@
-import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Skeleton,
+  SkeletonCircle,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import NavBar from "../components/ui/NavBar";
 import Footer from "../components/ui/Footer";
 import { Container } from "@chakra-ui/react";
@@ -7,33 +18,33 @@ import { FaDollarSign } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import productsData from "../../public/data.json";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const foundProduct = data.find((product) => product.id == id);
-        if (!foundProduct) {
-          throw new Error("Product not found");
-        }
-        setProduct(foundProduct);
-      })
-      .catch((error) => {
-        console.error("Error fetching product:", error);
-      });
-  }, [id]); // Added id as dependency
+    try {
+      const foundProduct = productsData.find((p) => p.id == id);
+      if (!foundProduct) throw new Error("Product not found");
+      setProduct(foundProduct);
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  }, [id]);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+      <HStack>
+        <SkeletonCircle size={12}>
+          <Stack flex={1}>
+            <Skeleton height={5}></Skeleton>
+            <Skeleton height={5} width={"80%"}></Skeleton>
+          </Stack>
+        </SkeletonCircle>
+      </HStack>
+    );
   }
 
   return (
