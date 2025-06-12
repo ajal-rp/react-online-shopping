@@ -3,69 +3,80 @@
     "id": 1,
     "title": "Nothing Phone (5G)",
     "rating": 4.8,
-    "image": "https://m.media-amazon.com/images/I/41NothingPhone.jpg",
-    "description": "Sleek mid‑range Android phone with clean Glyph UI, unique transparent back design, reliable performance and wireless charging support."
+    "image": "https://placehold.co/600x400",
+    "description": "Sleek mid‑range Android phone with clean Glyph UI, unique transparent back design, reliable performance and wireless charging support.",
+    "price": 450
   },
   {
     "id": 2,
     "title": "Motorola Edge 50 Fusion",
     "rating": 4.4,
-    "image": "https://m.media-amazon.com/images/I/41MotorolaEdge.jpg",
-    "description": "Feature-packed 5G phone with AMOLED screen, fast charging, expandable RAM, offering great value under ₹20,000."
+    "image": "https://placehold.co/600x400",
+    "description": "Feature-packed 5G phone with AMOLED screen, fast charging, expandable RAM, offering great value under ₹20,000.",
+    "price": 350
   },
   {
     "id": 3,
     "title": "Redmi 14c 5G",
     "rating": 4.7,
-    "image": "https://i01.redmimobiledotcom/images/globalproducts/14c.jpg",
-    "description": "Budget 5G phone with large battery, solid performance, dual-camera setup—ideal for everyday use."
+    "image": "https://placehold.co/600x400",
+    "description": "Budget 5G phone with large battery, solid performance, dual-camera setup—ideal for everyday use.",
+    "price": 320
   },
   {
     "id": 4,
     "title": "Samsung Galaxy S25 Ultra",
     "rating": 4.8,
-    "image": "https://images.samsung.com/is/image/samsung/p6pim/in/galaxys25ultra.jpg",
-    "description": "Flagship Galaxy phone featuring Snapdragon 8 Elite, QHD+ AMOLED display, 200 MP camera, and advanced AI features."
+    "image": "https://placehold.co/600x400",
+    "description": "Flagship Galaxy phone featuring Snapdragon 8 Elite, QHD+ AMOLED display, 200 MP camera, and advanced AI features.",
+    "price": 12000
   },
   {
     "id": 5,
     "title": "Sony WF‑1000XM5 Earbuds",
     "rating": 4.4,
-    "image": "https://m.media-amazon.com/images/I/51SonyWF1000XM5.jpg",
-    "description": "Premium true wireless earbuds with top‑tier ANC, LDAC support, excellent sound profile and multipoint Bluetooth."
+    "image": "https://placehold.co/600x400",
+    "description": "Premium true wireless earbuds with top‑tier ANC, LDAC support, excellent sound profile and multipoint Bluetooth.",
+    "price": 150
   },
   {
     "id": 6,
     "title": "Realme Buds T110",
     "rating": 4.4,
-    "image": "https://m.media-amazon.com/images/I/41RealmeT110.jpg",
-    "description": "Affordable TWS earbuds with AI‑enhanced ENC mic, decent battery life and rapid charging—great value under ₹700."
+    "image": "https://placehold.co/600x400",
+    "description": "Affordable TWS earbuds with AI‑enhanced ENC mic, decent battery life and rapid charging—great value under ₹700.",
+    "price": 250
   },
   {
     "id": 7,
     "title": "boAt Airdopes Alpha",
     "rating": 4.7,
-    "image": "https://m.media-amazon.com/images/I/41BoAtAirdopes.jpg",
-    "description": "Compact wireless earbuds by boAt, offering punchy sound, reliable Bluetooth, and long battery life at a budget price."
+    "image": "https://placehold.co/600x400",
+    "description": "Compact wireless earbuds by boAt, offering punchy sound, reliable Bluetooth, and long battery life at a budget price.",
+    "price": 250
   },
   {
     "id": 8,
     "title": "Samsung Galaxy S25 Ultra (1 TB)",
     "rating": 4.8,
-    "image": "https://images.samsung.com/is/image/samsung/p6pim/in/galaxys25ultra-1tb.jpg",
-    "description": "High‑capacity variant of S25 Ultra with 1 TB storage and 12 GB RAM—ideal for power users and creatives."
+    "image": "https://placehold.co/600x400",
+    "description": "High‑capacity variant of S25 Ultra with 1 TB storage and 12 GB RAM—ideal for power users and creatives.",
+    "price": 13000
   },
   {
     "id": 9,
     "title": "Google Pixel Buds Pro 2",
     "rating": 4.5,
-    "image": "https://m.media-amazon.com/images/I/41PixelBudsPro2.jpg",
-    "description": "ANC true wireless earbuds with seamless Google Assistant integration and excellent voice call quality."
+    "image": "https://placehold.co/600x400",
+    "description": "ANC true wireless earbuds with seamless Google Assistant integration and excellent voice call quality.",
+    "price": 780
   },
   {
     "id": 10,
     "title": "Sony WF‑1000XM5 (Armour Case)",
     "rating": 4.4,
-    "image": "https://m.media-amazon.com/images/I/41SonyXM5Armor.jpg",
-    "description": "Sony’s flagship earbuds bundled with a rugged armor protective case—same stellar audio and ANC experience."
-  }]
+    "image": "https://placehold.co/600x400",
+    "description": "Sony’s flagship earbuds bundled with a rugged armor protective case—same stellar audio and ANC experience.",
+    "price": 500
+  }
+]

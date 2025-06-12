@@ -1,14 +1,13 @@
 import {
   Box,
   Button,
-  DialogPropsProvider,
   Flex,
   Heading,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+
 
 const Footer = () => {
   return (
@@ -46,7 +45,7 @@ const Footer = () => {
             <Button variant={"ghost"} p={2}>
               Instagram
             </Button>
-            <Button variant={"ghost"} p={2} >
+            <Button variant={"ghost"} p={2}>
               Twitter
             </Button>
           </Flex>

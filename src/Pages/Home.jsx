@@ -1,6 +1,8 @@
 import {
   Box,
   Button,
+  Card,
+  CardBody,
   Flex,
   Grid,
   Heading,
@@ -11,23 +13,20 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { FaHamburger } from "react-icons/fa";
+import { FaDollarSign, FaEye, FaHamburger } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { LuSearch, LuStar } from "react-icons/lu";
 import Footer from "../components/ui/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch("/data.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network error");
-        }
-        response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
+        console.log("Data :=> ", data);
         setProducts(data);
       });
   }, []);
@@ -77,7 +76,6 @@ const Home = () => {
       </Flex>
 
       {/* Hero Banner */}
-
       <Box
         bg="gray"
         p={8}
@@ -107,6 +105,7 @@ const Home = () => {
           </Button>
         </Box>
       </Box>
+
       {/* Categories */}
       <Box p={8}>
         <Heading size="lg" mb={6} textAlign="center">
@@ -143,41 +142,64 @@ const Home = () => {
         <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
           {products &&
             products.map((product) => (
-              <Box
+              <Card.Root
                 key={product.id}
-                bg={"white"}
-                borderRadius={"md"}
+                maxW="sm"
                 overflow={"hidden"}
-                boxShadow={"md"}
+                border={"none"}
+                shadow={"sm"}
+                _hover={{ shadow: "xl" }}
+                cursor={"pointer"}
               >
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  h={"200px"}
-                  w={100}
-                  objectFit={"cover"}
-                />
-                <Box p={4}>
-                  <Text fontWeight={"bold"}>{product.name}</Text>
-                  <Text color={"teal.600"} fontWeight={"bold"} my={2}>
-                    {product.price}
-                  </Text>
-                  <Flex justify={"space-between"} align={"center"}>
-                    <Button colorScheme={"teal"} size={"sm"}>
-                      Add to Cart
+                <Image src={product.image} alt={product.title} />
+                <CardBody gap={2} p={3}>
+                  <Card.Title>{product.title}</Card.Title>
+                  <Card.Description>{product.description}</Card.Description>
+                  <Flex
+                    justifyContent={"space-between"}
+                    alignItems={"baseline"}
+                  >
+                    <Text
+                      textStyle={"2xl"}
+                      fontWeight={"bold"}
+                      letterSpacing={"tight"}
+                      mt={2}
+                      textAlign={"left"}
+                    >
+                      ${product.price}
+                    </Text>
+                    <Button variant={"outline"} p={5}>
+                      <Link to={`product/${product.id}`}>View Product</Link>
                     </Button>
-                    <Flex align={"center"}>
-                      <LuStar color="yellow.400" />
-                      <Text ml={1}>{product.rating}</Text>
-                    </Flex>
                   </Flex>
-                </Box>
-              </Box>
+                </CardBody>
+                <Card.Footer gap={4} justifyContent={"center"} mb={2}>
+                  <Button variant={"outline"} p={3}>
+                    <FaDollarSign /> Buy Now
+                  </Button>
+                  <Button variant={"outline"} p={3}>
+                    <FaCartShopping /> Add To Cart
+                  </Button>
+                  <Flex align={"center"}>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <LuStar
+                        key={i}
+                        color={
+                          i < Math.round(product.rating) ? "#FFD700" : "#E2E8F0"
+                        }
+                        style={{ marginRight: 2 }}
+                      />
+                    ))}
+                    <Text ml={1}>{Math.round(product.rating)}</Text>
+                  </Flex>
+                </Card.Footer>
+              </Card.Root>
             ))}
         </Grid>
       </Box>
 
-      <Footer></Footer>
+      {/* Footer */}
+      <Footer />
     </Box>
   );
 };

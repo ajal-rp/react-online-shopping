@@ -9,13 +9,11 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <Stack>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/propduct:id" element={<ProductDetails />} />
-        </Routes>
-      </Stack>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+      </Routes>
     </BrowserRouter>
   );
 }
